@@ -8,8 +8,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'listagem-produtos',
     pathMatch: 'full'
+  },
+  {
+    path: 'listagem-produtos',
+    loadChildren: () => import('./pages/listagem-produtos/listagem-produtos.module').then( m => m.ListagemProdutosPageModule)
+  },
+  {
+    path: 'detalhes-produtos/:id',
+    loadChildren: () => import('./pages/detalhes-produtos/detalhes-produtos.module').then( m => m.DetalhesProdutosPageModule)
   },
 ];
 

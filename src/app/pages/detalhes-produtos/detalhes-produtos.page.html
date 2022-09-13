@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaulHref ="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Serviços</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img id = img src="{{img}}"></ion-img>
+  <p>Dados do Serviço</p>
+  <ion-item>{{produtoSelecionado.nome}}</ion-item>
+  <ion-item>R$ {{produtoSelecionado.valor}}</ion-item>
+  <ion-item>Garantia (Meses).: {{produtoSelecionado.garantia}}</ion-item>
+</ion-content>
