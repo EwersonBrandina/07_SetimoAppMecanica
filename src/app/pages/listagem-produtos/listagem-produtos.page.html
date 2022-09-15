@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaulHref ="" ></ion-back-button>
+    </ion-buttons>
     <ion-title>Lista</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,4 +14,21 @@
       <p>{{todosDados.valor}}</p>
     </ion-item>
   </ion-list>
+
+  <form *ngIf="modoDeEdicao" (ngSubimt)="encerrarEdicao()">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)]="produtoSelecionado.nome" name="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Valor</ion-label>
+      <ion-input [(ngModel)]="produtoSelecionado.valor" name="valor"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Qnt. (Meses)</ion-label>
+      <ion-input [(ngModel)]="produtoSelecionado.garantia" name="garantia"></ion-input>
+    </ion-item>
+
+    <ion-button color="dark" shape="round">Inserir Serviço</ion-button>
+  </form>
 </ion-content>

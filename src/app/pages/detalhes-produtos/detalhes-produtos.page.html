@@ -10,7 +10,27 @@
 <ion-content>
   <ion-img id = img src="{{img}}"></ion-img>
   <p>Dados do Serviço</p>
-  <ion-item>{{produtoSelecionado.nome}}</ion-item>
-  <ion-item>R$ {{produtoSelecionado.valor}}</ion-item>
-  <ion-item>Garantia (Meses).: {{produtoSelecionado.garantia}}</ion-item>
+  <ion-item *ngIf="!modoDeEdicao">{{produtoSelecionado.nome}}</ion-item>
+  <ion-item *ngIf="!modoDeEdicao">R$ {{produtoSelecionado.valor}}</ion-item>
+  <ion-item *ngIf="!modoDeEdicao">Garantia (Meses).: {{produtoSelecionado.garantia}}</ion-item>
+
+  <ion-button *ngIf="!modoDeEdicao" (click)="iniciarEdicao()">Alterar Dados</ion-button>
+
+  <form *ngIf="modoDeEdicao" (ngSubimt)="encerrarEdicao()">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)]="produtoSelecionado.nome" name="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Valor</ion-label>
+      <ion-input [(ngModel)]="produtoSelecionado.valor" name="valor"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Qnt. (Meses)</ion-label>
+      <ion-input [(ngModel)]="produtoSelecionado.garantia" name="garantia"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="encerrarEdicao()">Salvar</ion-button>
+  </form>
+
 </ion-content>

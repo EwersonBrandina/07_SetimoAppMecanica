@@ -9,9 +9,14 @@ import { DadosProdutosService } from 'src/app/services/dados-produtos.service';
 export class ListagemProdutosPage implements OnInit {
 
   public todosDados : any
+  public modoDeInsercao = false
 
   constructor(private dados: DadosProdutosService) {
     this.todosDados = this.dados.enviarTodosDados()
+  }
+
+  inserirDados(){
+    this.modoDeInsercao = true
   }
 
   ngOnInit() {
