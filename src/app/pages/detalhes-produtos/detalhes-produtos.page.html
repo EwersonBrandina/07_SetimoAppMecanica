@@ -15,6 +15,7 @@
   <ion-item *ngIf="!modoDeEdicao">Garantia (Meses).: {{produtoSelecionado.garantia}}</ion-item>
 
   <ion-button *ngIf="!modoDeEdicao" (click)="iniciarEdicao()">Alterar Dados</ion-button>
+  <ion-button *ngIf="!modoDeEdicao" (click)="excluirDado()">Excluir Dado</ion-button>
 
   <form *ngIf="modoDeEdicao" (ngSubimt)="encerrarEdicao()">
     <ion-item>
@@ -30,7 +31,7 @@
       <ion-input [(ngModel)]="produtoSelecionado.garantia" name="garantia"></ion-input>
     </ion-item>
 
-    <ion-button (click)="encerrarEdicao()">Salvar</ion-button>
+    <ion-button (click)="encerrarEdicao()" routerLink="/listagem-produtos/">Salvar</ion-button>
   </form>
 
 </ion-content>

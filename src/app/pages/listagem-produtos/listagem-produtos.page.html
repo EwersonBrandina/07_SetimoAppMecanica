@@ -7,6 +7,12 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-fab vertical="top" horizontal="end" slot="fixed" edge="true">
+  <ion-fab-button routerLink="/detalhes-produtos/-1">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let todosDados of todosDados" routerLink="/detalhes-produtos/{{todosDados.id}}">
@@ -29,6 +35,6 @@
       <ion-input [(ngModel)]="produtoSelecionado.garantia" name="garantia"></ion-input>
     </ion-item>
 
-    <ion-button color="dark" shape="round">Inserir Serviço</ion-button>
+
   </form>
 </ion-content>

@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class DadosProdutosService {
 
+  public dadosServicos : any
+
   private produtos = [
     {id: 1, nome: 'Alinhamento', valor: 49.90, garantia: 6},
     {id: 2, nome: 'Balanceamento', valor: 39.90, garantia: 5},
@@ -22,4 +24,11 @@ export class DadosProdutosService {
     const produtoSelecionado = this.produtos.filter(produto => produto.id === id)
     return produtoSelecionado [0]
   }
+
+  recebeDados(dadosRecebidos : any){
+    dadosRecebidos.id = this.produtos.length + 1
+    this.produtos.push(dadosRecebidos)
+  }
+
+
 }
