@@ -7,6 +7,12 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-fab  horizontal="end" slot="fixed" edge="true">
+  <ion-fab-button color="danger" (click)="excluirServico()" routerLink="/listagem-produtos">
+    <ion-icon name="trash"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
 <ion-content>
   <ion-img id = img src="{{img}}"></ion-img>
   <p>Dados do Serviço</p>
@@ -15,7 +21,6 @@
   <ion-item *ngIf="!modoDeEdicao">Garantia (Meses).: {{produtoSelecionado.garantia}}</ion-item>
 
   <ion-button *ngIf="!modoDeEdicao" (click)="iniciarEdicao()">Alterar Dados</ion-button>
-  <ion-button *ngIf="!modoDeEdicao" (click)="excluirDado()">Excluir Dado</ion-button>
 
   <form *ngIf="modoDeEdicao" (ngSubimt)="encerrarEdicao()">
     <ion-item>

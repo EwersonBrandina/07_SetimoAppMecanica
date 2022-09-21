@@ -33,6 +33,10 @@ export class DetalhesProdutosPage implements OnInit {
     }
   }
 
+  excluirServico(){
+    this.produto.excluiDados(this.produtoSelecionado)
+  }
+
   ngOnInit() {
     const id : number = Number(this.route.snapshot.paramMap.get('id'))
     if (id > 0){

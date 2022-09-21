@@ -30,5 +30,9 @@ export class DadosProdutosService {
     this.produtos.push(dadosRecebidos)
   }
 
+  excluiDados(dadosRecebidos : any){
+    this.produtos.splice(this.produtos.indexOf(dadosRecebidos), 1)
+  }
+
 
 }
